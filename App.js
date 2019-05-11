@@ -16,6 +16,17 @@ export default class App extends React.Component {
 		};
 	}
 
+	addTodo() {
+		i++;
+		const text = `TODO number ${id}`;
+		this.setState({
+			todos: [
+				...this.state.todos,
+				{ id: id++, text: text, checked: false }
+			]
+		});
+	}
+
 	render() {
 		return (
 			<View>
