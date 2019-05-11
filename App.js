@@ -5,7 +5,8 @@ import { Constants } from 'expo';
 let id = 0;
 
 const styles = StyleSheet.create({
-	todoContainer: { flexDirection: 'row', alignItems: 'center' }
+	todoContainer: { flexDirection: 'row', alignItems: 'center' },
+	appContainer: { paddingTop: Constants.statusBarHeight }
 });
 
 const Todo = props => (
@@ -36,7 +37,7 @@ export default class App extends React.Component {
 
 	render() {
 		return (
-			<View style={{ paddingTop: Constants.statusBarHeight }}>
+			<View style={styles.appContainer}>
 				<Text>Todo count: {this.state.todos.length}</Text>
 				<Text>
 					Unchecked todo count:{' '}
