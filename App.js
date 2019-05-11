@@ -1,5 +1,6 @@
 import React from 'react';
 import { StyleSheet, Text, View, Button, ScrollView } from 'react-native';
+import { Constants } from 'expo';
 
 let id = 0;
 
@@ -31,7 +32,7 @@ export default class App extends React.Component {
 
 	render() {
 		return (
-			<View>
+			<View style={{ paddingTop: Constants.statusBarHeight }}>
 				<Text>Todo count: {this.state.todos.length}</Text>
 				<Text>
 					Unchecked todo count:{' '}
@@ -51,12 +52,3 @@ export default class App extends React.Component {
 		);
 	}
 }
-
-const styles = StyleSheet.create({
-	container: {
-		flex: 1,
-		backgroundColor: '#fff',
-		alignItems: 'center',
-		justifyContent: 'center'
-	}
-});
