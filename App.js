@@ -18,7 +18,7 @@ const styles = StyleSheet.create({
 
 const Todo = props => (
 	<View style={styles.todoContainer}>
-		<Switch value={props.todo.checked} />
+		<Switch value={props.todo.checked} onValueChange={props.onToggle} />
 		<Button onPress={props.onDelete} title="delete" />
 		<Text>{props.todo.text}</Text>
 	</View>
@@ -40,6 +40,12 @@ export default class App extends React.Component {
 				...this.state.todos,
 				{ id: id++, text: text, checked: false }
 			]
+		});
+	}
+
+	removeTodo(id) {
+		this.setState({
+			todos: this.state.todos.filter(todo => todo.id !== id)
 		});
 	}
 
