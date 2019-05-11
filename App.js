@@ -1,6 +1,8 @@
 import React from 'react';
 import { StyleSheet, Text, View, Button, ScrollView } from 'react-native';
 
+let id = 0;
+
 const Todo = props => (
 	<View>
 		<Button onPress={props.onDelete} title="delete" />
@@ -17,7 +19,7 @@ export default class App extends React.Component {
 	}
 
 	addTodo() {
-		i++;
+		id++;
 		const text = `TODO number ${id}`;
 		this.setState({
 			todos: [
@@ -35,7 +37,7 @@ export default class App extends React.Component {
 					Unchecked todo count:{' '}
 					{this.state.todos.filter(todo => !todo.checked).length}
 				</Text>
-				<Button onPress={() => this.addTodo()} tlte="Add TODO" />
+				<Button onPress={() => this.addTodo()} title="Add TODO" />
 				<ScrollView>
 					{this.state.todos.map(todo => (
 						<Todo
