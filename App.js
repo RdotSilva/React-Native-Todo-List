@@ -9,6 +9,13 @@ const Todo = props => (
 );
 
 export default class App extends React.Component {
+	constructor() {
+		super();
+		this.state = {
+			todos: []
+		};
+	}
+
 	render() {
 		return (
 			<View>
