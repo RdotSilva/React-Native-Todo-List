@@ -4,8 +4,12 @@ import { Constants } from 'expo';
 
 let id = 0;
 
+const styles = StyleSheet.create({
+	todoContainer: { flexDirection: 'row', alignItems: 'center' }
+});
+
 const Todo = props => (
-	<View style={{ flexDirection: 'row', alignItems: 'center' }}>
+	<View style={styles.todoContainer}>
 		<Button onPress={props.onDelete} title="delete" />
 		<Text>{props.todo.text}</Text>
 	</View>
